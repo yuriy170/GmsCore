@@ -15,9 +15,9 @@
   -->
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="gms_app_name">Servicios de microG Core</string>
+    <string name="gms_app_name">Servicios de microG Core - Huawei jk@2k - mode</string>
     <string name="gms_settings_name">Ajustes de microG</string>
-    <string name="gms_settings_summary">Configurar los servicios de microG Core.</string>
+    <string name="gms_settings_summary">Configurar los servicios de microG Core. Huawei jk@2k - mode</string>
 
     <string name="just_a_sec">Un momento…</string>
     <string name="google_account_label">Google</string>

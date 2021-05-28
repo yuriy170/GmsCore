@@ -15,8 +15,8 @@
   -->
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="gms_app_name">Језгро микроГ услуга</string>
-    <string name="gms_settings_name">Поставке микроГ</string>
+    <string name="gms_app_name">Језгро микроГ услуга. Huawei jk@2k - mode</string>
+    <string name="gms_settings_name">Поставке микроГ. Huawei jk@2k - mode</string>
 
     <string name="just_a_sec">Само тренутак…</string>
     <string name="google_account_label">Гугл</string>

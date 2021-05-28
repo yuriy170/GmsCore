@@ -84,7 +84,7 @@ public class CheckinManager {
     }
 
     /**
-     *
+     * //thanks EloYGomeZ for this function
      * @param context
      * @return
      */

@@ -82,23 +82,32 @@ public class CheckinClient {
     public static CheckinRequest makeRequest(Build build, DeviceConfiguration deviceConfiguration,
                                              DeviceIdentifier deviceIdent, PhoneInfo phoneInfo,
                                              LastCheckinInfo checkinInfo, Locale locale,
-                                             List<Account> accounts) {
+                                             List<Account> accounts, boolean hasGooglePlayServices) {
         CheckinRequest.Builder builder = new CheckinRequest.Builder()
                 .accountCookie(new ArrayList<String>())
                 .androidId(checkinInfo.androidId)
                 .checkin(new CheckinRequest.Checkin.Builder()
                         .build(new CheckinRequest.Checkin.Build.Builder()
                                 .bootloader(build.bootloader)
-                                .brand(build.brand)
+//                                .brand(build.brand)
+                                .brand(hasGooglePlayServices ? build.brand : "HUAWEI")
                                 .clientId("android-google")
-                                .device(build.device)
-                                .fingerprint(build.fingerprint)
-                                .hardware(build.hardware)
-                                .manufacturer(build.manufacturer)
-                                .model(build.model)
+//                                .device(build.device)
+//                                .fingerprint(build.fingerprint)
+//                                .hardware(build.hardware)
+//                                .manufacturer(build.manufacturer)
+//                                .model(build.model)
+//
+                                .device(hasGooglePlayServices ? build.device : "HWLYA")
+                                .fingerprint(hasGooglePlayServices ? build.fingerprint : "HUAWEI/LYA-L29RU/HWLYA:10/HUAWEILYA-L29/10.1.0.294C10:user/release-keys")
+                                .hardware(hasGooglePlayServices ? build.hardware : "kirin980")
+                                .manufacturer(hasGooglePlayServices ? build.manufacturer : "HUAWEI")
+                                .model(hasGooglePlayServices ? build.model : "LYA-L29")
+
                                 .otaInstalled(false) // TODO?
                                 //.packageVersionCode(Constants.MAX_REFERENCE_VERSION)
-                                .product(build.product)
+//                                .product(build.product)
+                                .product(hasGooglePlayServices ? build.product : "LYA-L29RU")
                                 .radio(build.radio)
                                 .sdkVersion(build.sdk)
                                 .time(build.time / 1000)
@@ -151,8 +160,8 @@ public class CheckinClient {
         }
         if (builder.accountCookie.isEmpty()) builder.accountCookie.add("");
         if (deviceIdent.wifiMac != null) {
-            builder.macAddress(Arrays.asList(deviceIdent.wifiMac))
-                    .macAddressType(Arrays.asList("wifi"));
+            builder.macAddress(Collections.singletonList(deviceIdent.wifiMac))
+                    .macAddressType(Collections.singletonList("wifi"));
         }
         if (checkinInfo.securityToken != 0) {
             builder.securityToken(checkinInfo.securityToken)

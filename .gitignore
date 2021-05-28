@@ -7,3 +7,6 @@ build/
 user.gradle
 local.properties
 .directory
+.DS_Store
+play-services-core/withMapboxWithNearby/
+*.hprof

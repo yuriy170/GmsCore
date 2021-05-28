@@ -20,18 +20,18 @@ import java.util.Locale;
 import java.util.Random;
 
 public class Build {
-    public String fingerprint = android.os.Build.FINGERPRINT;
-    public String hardware = android.os.Build.HARDWARE;
-    public String brand = android.os.Build.BRAND;
+    public String fingerprint = "HUAWEI/LYA-L29RU/HWLYA:10/HUAWEILYA-L29/10.1.0.294C10:user/release-keys";//android.os.Build.FINGERPRINT;
+    public String hardware = "kirin980";//android.os.Build.HARDWARE;
+    public String brand = "HUAWEI";//android.os.Build.BRAND;
     public String radio = getRadio();
-    public String bootloader = android.os.Build.BOOTLOADER;
+    public String bootloader = "QP1A.190711.020"; //android.os.Build.BOOTLOADER;
     public long time = android.os.Build.TIME;
-    public String device = android.os.Build.DEVICE;
+    public String device = "HWLYA";//android.os.Build.DEVICE;
     public int sdk = android.os.Build.VERSION.SDK_INT;
-    public String model = android.os.Build.MODEL;
-    public String manufacturer = android.os.Build.MANUFACTURER;
-    public String product = android.os.Build.PRODUCT;
-    public String id = android.os.Build.ID;
+    public String model = "LYA-L29";//android.os.Build.MODEL;
+    public String manufacturer = "HUAWEI";//android.os.Build.MANUFACTURER;
+    public String product = "LYA-L29RU";//android.os.Build.PRODUCT;
+    public String id = "HUAWEILYA-L29";//android.os.Build.ID;
     public String serial = generateSerialNumber(); // TODO: static
 
     @SuppressWarnings("deprecation")

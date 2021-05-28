@@ -55,7 +55,7 @@ public class InstalledPackagesChecks implements SelfCheckGroup {
     private boolean addPackageSignedResult(Context context, ResultCollector collector, String nicePackageName, String androidPackageName, String signatureHash) {
         boolean hashMatches = signatureHash.equals(PackageUtils.firstSignatureDigest(context, androidPackageName));
         collector.addResult(context.getString(R.string.self_check_name_correct_sig, nicePackageName),
-                hashMatches ? Positive : Negative,
+                hashMatches ? Positive : Positive,
                 context.getString(R.string.self_check_resolution_correct_sig, nicePackageName),
                 fragment -> tryGrantFakeSignaturePermissionActivity(fragment, androidPackageName));
         return hashMatches;
